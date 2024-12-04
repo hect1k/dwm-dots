@@ -1,0 +1,13 @@
+#!/bin/bash
+
+lxsession &
+bluetoothctl power off &
+picom &
+feh --bg-scale ~/pix/walls/forest.jpg &
+xautolock -time 1 -locker slock &
+xmodmap -e "clear lock" &
+xmodmap -e "keysym Caps_Lock = BackSpace"  &
+xclip &
+udiskie &
+~/.local/bin/drink_water &
+~/.local/bin/batmon -n -L 20 -s ~/.local/share/sounds/notification.ogg -v 75 &

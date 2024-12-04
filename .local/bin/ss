@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ "$1" == "-s" ]; then
+    file=screenshot_$(date +%F_%T).png
+    maim -s -o -b 5 -u ~/pix/ss/$file && notify-send "$file saved to ~/pix/ss"
+else
+    maim -s -o -b 5 -u | xclip -selection clipboard -t image/png && notify-send "Screenshot copied to clipboard"
+fi

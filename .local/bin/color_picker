@@ -1,0 +1,7 @@
+#!/bin/sh
+
+color=$(xcolor)
+
+echo $color | xclip -selection clipboard
+
+notify-send "$color copied to clipboard"
