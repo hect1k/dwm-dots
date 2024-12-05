@@ -6,11 +6,11 @@ sec=0
 
 # MODULES
 update_cpu () { 
-	cpu=" $(grep -o "^[^ ]*" /proc/loadavg )" 
+	cpu="  $(grep -o "^[^ ]*" /proc/loadavg )" 
 }
 
 update_memory () { 
-	memory=" $(free -h | sed -n "2s/\([^ ]* *\)\{2\}\([^ ]*\).*/\2/p")"
+	memory="  $(free -h | sed -n "2s/\([^ ]* *\)\{2\}\([^ ]*\).*/\2/p")"
 }
 
 update_time () { 
