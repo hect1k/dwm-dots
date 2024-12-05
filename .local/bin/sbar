@@ -54,6 +54,10 @@ update_cam () {
 
 
 # modules that don't update on their own need to be run at the start for getting their initial value
+update_time
+update_cpu
+update_memory
+update_bat
 update_vol
 update_mic
 
@@ -75,8 +79,8 @@ do
 	sleep 1 & wait && { 
 		# to update item ever n seconds with a offset of m
 		## [ $((sec % n)) -eq m ] && udpate_item
-		[ $((sec % 60 )) -eq 0 ] && update_time 	# update time every 60 seconds
-		[ $((sec % 5)) -eq 0 ] && update_cpu 	# update cpu every 5 seconds
+		[ $((sec % 5)) -eq 0 ] && update_time # update time every 5 seconds
+		[ $((sec % 5)) -eq 0 ] && update_cpu
 		[ $((sec % 5)) -eq 0 ] && update_memory
 		[ $((sec % 5)) -eq 0 ] && update_bat
 		[ $((sec % 5)) -eq 0 ] && update_cam
