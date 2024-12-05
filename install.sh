@@ -106,6 +106,8 @@ sudo cp .zshrc ~/
 sudo cp .xinitrc ~/
 sudo cp .gtkrc-2.0 ~/
 
+sudo rm -rf ~/.config/nvim && git clone --depth=1 https://github.com/nnisarggada/nvim-config ~/.config/nvim/
+
 # Install global Node.js packages
 pnpm setup
 pnpm i -g pnpm
