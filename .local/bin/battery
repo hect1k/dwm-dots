@@ -54,11 +54,11 @@ get_battery_status() {
     done
 
     if [[ $charging == true ]]; then
-        echo "󰂄"
+        echo "CHARGING"
     elif [[ $discharging == true ]]; then
-        echo "󰁿"
+        echo "DISCHARGING"
     elif [[ $full == true ]]; then
-        echo "󱟢"
+        echo "FULL"
     else
         echo "Unknown"
     fi
@@ -78,4 +78,23 @@ fi
 PERC=$(get_battery_perc "${BATTERIES[@]}")
 STATUS=$(get_battery_status "${BATTERIES[@]}")
 
-echo "$STATUS $PERC%"
+if [[ $STATUS == "CHARGING" ]]; then
+    echo "󰂄 $PERC%"
+elif [[ $STATUS == "DISCHARGING" ]]; then
+    if [[ $PERC -gt 80 ]]; then
+        echo "󰂁 $PERC%"
+    elif [[ $PERC -gt 60 ]]; then
+        echo "󰁿 $PERC%"
+    elif [[ $PERC -gt 40 ]]; then
+        echo "󰁽 $PERC%"
+    elif [[ $PERC -gt 20 ]]; then
+        echo "󰁻 $PERC%"
+    else
+        echo "󰁺 $PERC%"
+    fi
+
+elif [[ $STATUS == "FULL" ]]; then
+    echo "󰁹 $PERC%"
+else
+    echo "󰂑 $PERC%"
+fi
