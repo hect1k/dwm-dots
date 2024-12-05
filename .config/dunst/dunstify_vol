@@ -50,24 +50,30 @@ case "$1" in
 --inc|-i)
 	sink_volume=$(pactl get-sink-volume $sink_name | awk '{print $5}' | cut -d '%' -f 1)
 	[[ "$((sink_volume+$2))" -lt $vol_max ]] && pactl set-sink-volume $sink_name +$2% || pactl set-sink-volume $sink_name $vol_max%
+	kill -34 "$(cat ~/.cache/pidofbar)"
 	sink_notification
 	;;
 --dec|-d)
 	pactl set-sink-volume $sink_name -$2%
+	kill -34 "$(cat ~/.cache/pidofbar)"
 	sink_notification
 	;;
 --sink_toggle|-t)
 	pactl set-sink-mute $sink_name toggle
+	kill -34 "$(cat ~/.cache/pidofbar)"
 	sink_notification
 	;;
 --sink_mute|-m)
+	kill -34 "$(cat ~/.cache/pidofbar)"
 	pactl set-sink-mute $sink_name true
 	;;
 --source_toggle|-y)
+	kill -35 "$(cat ~/.cache/pidofbar)"
 	pactl set-source-mute $source_name toggle
 	source_notification
 	;;
 --source_mute|-n)
+	kill -35 "$(cat ~/.cache/pidofbar)"
 	pactl set-source-mute $source_name true
 	;;
 *)

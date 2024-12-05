@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Get the mute status for the default sink
+MUTED=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')
+
+# Display the results
+if [[ $MUTED == "yes" ]]; then
+    echo " 󰖁 "
+else
+    VOLUME=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -oP '\d+%' | head -n 1)
+    echo "󱄠 $VOLUME"
+fi

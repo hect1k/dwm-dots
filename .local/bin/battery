@@ -1,0 +1,81 @@
+#!/bin/bash
+
+# This function returns an awk script that calculates the battery percentage
+get_awk_source() {
+    cat <<EOF
+BEGIN {
+    FS="=";
+}
+\$1 ~ /ENERGY_FULL$/ {
+    full += \$2;
+}
+\$1 ~ /ENERGY_NOW\$/ {
+    now += \$2;
+}
+\$1 ~ /CHARGE_FULL$/ {
+    full += \$2;
+}
+\$1 ~ /CHARGE_NOW\$/ {
+    now += \$2;
+}
+END {
+    if (full > 0) {
+        print int(100 * now / full);
+    }
+}
+EOF
+}
+
+# Function to get the battery percentage
+get_battery_perc() {
+    local batteries=("$@")
+    awk -f <(get_awk_source) "${batteries[@]}"
+}
+
+# Function to check battery status (Charging, Full, Discharging)
+get_battery_status() {
+    local batteries=("$@")
+    local charging=false
+    local discharging=false
+    local full=true  # Assume full unless proven otherwise
+    
+    for battery in "${batteries[@]}"; do
+        status=$(grep -m 1 'STATUS' "$battery")
+        
+        if [[ $status == *"Charging"* ]]; then
+            charging=true
+        elif [[ $status == *"Discharging"* ]]; then
+            discharging=true
+            full=false
+        elif [[ $status == *"Full"* ]]; then
+            # This battery is full, but we keep checking others
+            continue
+        fi
+    done
+
+    if [[ $charging == true ]]; then
+        echo "󰂄"
+    elif [[ $discharging == true ]]; then
+        echo "󰁿"
+    elif [[ $full == true ]]; then
+        echo "󱟢"
+    else
+        echo "Unknown"
+    fi
+}
+
+# Detect available batteries
+if ls /sys/class/power_supply/BAT*/uevent > /dev/null 2>&1; then
+    BATTERIES=( /sys/class/power_supply/BAT*/uevent )
+elif ls /sys/class/power_supply/CMB*/uevent > /dev/null 2>&1; then
+    BATTERIES=( /sys/class/power_supply/CMB*/uevent )
+else
+    echo "No batteries found"
+    exit 1
+fi
+
+# Get the total battery percentage and display it
+PERC=$(get_battery_perc "${BATTERIES[@]}")
+STATUS=$(get_battery_status "${BATTERIES[@]}")
+
+echo "$STATUS $PERC%"

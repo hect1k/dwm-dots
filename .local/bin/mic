@@ -1,0 +1,12 @@
+#!/bin/bash
+
+MUTE_STATUS=$(pactl get-source-mute @DEFAULT_SOURCE@ | awk '{print $2}')
+
+if [ "$MUTE_STATUS" == "yes" ]; then
+    echo " 󰍭 "
+else
+    # Check the volume level of the default microphone
+    VOLUME=$(pactl get-source-volume @DEFAULT_SOURCE@ | grep -oP '\d+%' | head -n 1)
+
+    echo "󰍬 $VOLUME"
+fi
