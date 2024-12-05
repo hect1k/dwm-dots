@@ -70,7 +70,7 @@ if ls /sys/class/power_supply/BAT*/uevent > /dev/null 2>&1; then
 elif ls /sys/class/power_supply/CMB*/uevent > /dev/null 2>&1; then
     BATTERIES=( /sys/class/power_supply/CMB*/uevent )
 else
-    echo "No batteries found"
+    echo ""
     exit 1
 fi
 
@@ -79,22 +79,22 @@ PERC=$(get_battery_perc "${BATTERIES[@]}")
 STATUS=$(get_battery_status "${BATTERIES[@]}")
 
 if [[ $STATUS == "CHARGING" ]]; then
-    echo "󰂄 $PERC%"
+    echo " [󰂄 $PERC%]"
 elif [[ $STATUS == "DISCHARGING" ]]; then
     if [[ $PERC -gt 80 ]]; then
-        echo "󰂁 $PERC%"
+        echo " [󰂁 $PERC%]"
     elif [[ $PERC -gt 60 ]]; then
-        echo "󰁿 $PERC%"
+        echo " [󰁿 $PERC%]"
     elif [[ $PERC -gt 40 ]]; then
-        echo "󰁽 $PERC%"
+        echo " [󰁽 $PERC%]"
     elif [[ $PERC -gt 20 ]]; then
-        echo "󰁻 $PERC%"
+        echo " [󰁻 $PERC%]"
     else
-        echo "󰁺 $PERC%"
+        echo " [󰁺 $PERC%]"
     fi
 
 elif [[ $STATUS == "FULL" ]]; then
-    echo "󰁹 $PERC%"
+    echo " [󰁹 $PERC%]"
 else
-    echo "󰂑 $PERC%"
+    echo "[󰂑 $PERC%]"
 fi

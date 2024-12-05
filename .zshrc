@@ -73,6 +73,12 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
     exec startx
 fi
 
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
 setopt autocd
 
 alias ls='ls --color=auto'
@@ -84,3 +90,11 @@ alias bc='better-commits'
 alias pn='pocketnaut'
 
 source <(fzf --zsh)
+
+# pnpm
+export PNPM_HOME="/home/nnisarggada/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
