@@ -59,7 +59,7 @@ update_mic
 
 display () { 
 	#printf "%s\n" " $event [$weather] [$memory $cpu] [$bat] [$backlight] [$vol] $time "
-	xsetroot -name " $cam [$cpu] [$memory] [$vol] [$mic] [$bat] $time "
+	xsetroot -name "$cam [$cpu] [$memory] [$vol] [$mic] [$bat] $time "
 }
 
 # SIGNALLING
