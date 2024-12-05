@@ -34,6 +34,10 @@ update_mic () {
 	mic="$(mic)"
 }
 
+update_cam () { 
+	cam="$(check-cam)"
+}
+
 # update_backlight () { 
 # 	# you might need to change the path depending on your device
 # 	read -r actual_brightness </sys/class/backlight/intel_backlight/actual_brightness
@@ -55,14 +59,14 @@ update_mic
 
 display () { 
 	#printf "%s\n" " $event [$weather] [$memory $cpu] [$bat] [$backlight] [$vol] $time "
-	xsetroot -name " [$cpu] [$memory] [$vol] [$mic] [$bat] $time "
+	xsetroot -name " $cam [$cpu] [$memory] [$vol] [$mic] [$bat] $time "
 }
 
 # SIGNALLING
 # trap	"<function>;display"		"RTMIN+n"
 trap	"update_vol;display"		"RTMIN"
 trap	"update_mic;display" 	"RTMIN+1"
-# trap	"update_bat;display" 		"RTMIN+2"
+trap	"update_bat;display" 		"RTMIN+2"
 # to update it from external commands
 ## kill -m "$(cat ~/.cache/pidofbar)"
 # where m = 34 + n
@@ -73,9 +77,10 @@ do
 		# to update item ever n seconds with a offset of m
 		## [ $((sec % n)) -eq m ] && udpate_item
 		[ $((sec % 60 )) -eq 0 ] && update_time 	# update time every 60 seconds
-		[ $((sec % 1)) -eq 0 ] && update_cpu 	# update cpu every 15 seconds
-		[ $((sec % 1)) -eq 0 ] && update_memory
-		[ $((sec % 60)) -eq 0 ] && update_bat
+		[ $((sec % 5)) -eq 0 ] && update_cpu 	# update cpu every 5 seconds
+		[ $((sec % 5)) -eq 0 ] && update_memory
+		[ $((sec % 5)) -eq 0 ] && update_bat
+		[ $((sec % 5)) -eq 0 ] && update_cam
 		# [ $((sec % 3600)) -eq 2 ] && update_weather 
 		#[ $((sec % 300)) -eq 1 ] && update_event
 
