@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Create standard directories
-mkdir -p ~/desk ~/dl ~/dox ~/pub ~/vids ~/work ~/music ~/tmplts ~/pix/ss ~/pix/wall
+mkdir -p ~/desk ~/dl ~/dox ~/pub ~/vids ~/work ~/music ~/tmplts ~/pix/ss ~/pix/walls
 
 # Install yay if not installed
 if ! type "yay" &>/dev/null; then
