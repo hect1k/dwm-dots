@@ -4,7 +4,7 @@ lxsession &
 bluetoothctl power off &
 picom &
 feh --bg-scale ~/pix/walls/forest.jpg &
-xautolock -time 1 -locker slock &
+xidlehook --detect-sleep --not-when-fullscreen --not-when-audio --timer 60 'slock' '' &
 xmodmap -e "clear lock" &
 xmodmap -e "keysym Caps_Lock = BackSpace"  &
 xclip &
