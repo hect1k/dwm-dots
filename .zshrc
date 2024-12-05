@@ -73,17 +73,6 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
     exec startx
 fi
 
-#My config
-export PATH=$HOME/.local/bin:$PATH
-
-# pnpm
-export PNPM_HOME="/home/nnisarggada/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
 setopt autocd
 
 alias ls='ls --color=auto'
@@ -95,7 +84,3 @@ alias bc='better-commits'
 alias pn='pocketnaut'
 
 source <(fzf --zsh)
-
-export ANDROID_HOME=~/Android/Sdk
-export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
