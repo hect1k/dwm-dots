@@ -58,7 +58,7 @@ shell=("dash" "zsh" "zsh-syntax-highlighting" "lxsession")
 appearance=("gruvbox-dark-gtk" "gruvbox-dark-icons-gtk")
 fonts=("ttf-joypixels" "ttf-jetbrains-mono-nerd" "ttf-ms-fonts" "noto-fonts-emoji")
 dev=("nodejs" "npm" "pnpm" "go" "lua" "python" "python-pip")
-apps=("onlyoffice-bin" "yt-dlp" "silicon" "arandr" "dunst" "github-cli" "librewolf-bin" "pcmanfm" "zathura" "zathura-pdf-mupdf")
+apps=("onlyoffice-bin" "yt-dlp" "silicon" "arandr" "dunst" "github-cli" "librewolf-bin" "pcmanfm" "zathura" "zathura-pdf-mupdf" "ytfzf" "ani-cli")
 
 # Function to install packages
 install_packages() {
