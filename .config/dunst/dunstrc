@@ -3,7 +3,7 @@
     follow = none
 
     width = 300
-    height = 200
+    height = 100
 
     origin = top-right
     offset = 5x30
