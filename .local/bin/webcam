@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ffplay -input_format mjpeg -window_title webcam -vf "crop=min(in_w\,in_h):min(in_w\,in_h):0:0" -an /dev/video0 &
