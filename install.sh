@@ -20,7 +20,7 @@ editors=("vi" "vim" "neovim")
 utils=("htop" "wget" "curl" "openssh" "wireless_tools" "smartmontools" "wpa_supplicant" "iwd" "p7zip" "auto-cpufreq" "man" "man-db" "man-pages" "ripgrep" "flatpak" "linux-headers" "v4l2loopback-dkms"  "xdg-desktop-portal-gtk" "ueberzug" "xdotool" "ncdu" "mpd" "mpv" "bluez" "bluez-libs" "bluez-utils" "xclip" "xcolor" "rsync" "git" "pulsemixer" "playerctl" "blueman" "maim" "unzip" "zip" "brightnessctl" "ntfs-3g" "udisks2" "udiskie" "gvfs" "mlocate" "libnotify" "jq" "acpi" "sxiv" "pass" "feh" "fzf" "pipewire" "pipewire-pulse" "networkmanager" "neofetch" "picom" "xidlehook" "xorg-xsetroot" "lsof" "downgrade" "gptfdisk")
 shell=("dash" "zsh" "zsh-syntax-highlighting" "lxsession")
 appearance=("gruvbox-dark-gtk" "gruvbox-dark-icons-gtk")
-fonts=("ttf-joypixels" "ttf-jetbrains-mono-nerd" "ttf-ms-fonts" "noto-fonts-emoji")
+fonts=("ttf-joypixels" "ttf-jetbrains-mono-nerd" "ttf-ms-fonts" "noto-fonts-emoji" "ttf-rasa")
 dev=("nodejs" "npm" "pnpm" "go" "lua" "python" "python-pip")
 apps=("onlyoffice-bin" "yt-dlp" "silicon" "arandr" "dunst" "github-cli" "librewolf-bin" "chromium" "pcmanfm" "zathura" "zathura-pdf-mupdf" "ytfzf" "ani-cli" "gimp" "gimp-plugin-saveforweb")
 
