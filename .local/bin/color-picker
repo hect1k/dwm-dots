@@ -2,6 +2,6 @@
 
 color=$(xcolor)
 
-echo $color | xclip -selection clipboard
+printf $color | xclip -selection clipboard
 
 notify-send "$color copied to clipboard"

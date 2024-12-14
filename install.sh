@@ -50,40 +50,32 @@ install_packages "${dev[@]}"
 install_packages "${apps[@]}"
 
 # Install dwm
-if ! type "dwm" &>/dev/null; then
-    git clone --depth=1 https://github.com/nnisarggada/dwm
-    cd dwm || exit
-    sudo make clean install
-    cd ..
-    rm -rf dwm
-fi
+rm -rf ~/.config/dwm
+git clone --depth=1 https://github.com/nnisarggada/dwm ~/.config/dwm
+cd ~/.config/dwm || exit
+sudo make clean install
+cd -
 
 # Install dmenu
-if ! type "dmenu" &>/dev/null; then
-    git clone --depth=1 https://github.com/nnisarggada/dmenu
-    cd dmenu || exit
-    sudo make clean install
-    cd ..
-    rm -rf dmenu
-fi
+rm -rf ~/.config/dmenu
+git clone --depth=1 https://github.com/nnisarggada/dmenu ~/.config/dmenu
+cd ~/.config/dmenu || exit
+sudo make clean install
+cd -
 
 # Install st
-if ! type "st" &>/dev/null; then
-    git clone --depth=1 https://github.com/nnisarggada/st
-    cd st || exit
-    sudo make clean install
-    cd ..
-    rm -rf st
-fi
+rm -rf ~/.config/st
+git clone --depth=1 https://github.com/nnisarggada/st ~/.config/st
+cd ~/.config/st || exit
+sudo make clean install
+cd -
 
 # Install slock
-if ! type "slock" &>/dev/null; then
-    git clone --depth=1 https://github.com/nnisarggada/slock
-    cd slock || exit
-    sudo make clean install
-    cd ..
-    rm -rf slock
-fi
+rm -rf ~/.config/slock
+git clone --depth=1 https://github.com/nnisarggada/slock ~/.config/slock
+cd ~/.config/slock || exit
+sudo make clean install
+cd -
 
 # Apply system settings
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
