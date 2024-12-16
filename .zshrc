@@ -89,6 +89,10 @@ alias gc='git clone --depth=1'
 alias bc='better-commits'
 alias pn='pocketnaut'
 
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
+
 source <(fzf --zsh)
 
 # pnpm
