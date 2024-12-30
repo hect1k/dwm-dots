@@ -56,7 +56,7 @@ declare -A mandatory_package_groups=(
 
 declare -A optional_package_groups=(
     ["Appearance"]="gruvbox-dark-gtk gruvbox-dark-icons-gtk"
-    ["Fonts"]="ttf-joypixels ttf-jetbrains-mono-nerd ttf-ms-fonts noto-fonts-emoji ttf-rasa"
+    ["Fonts"]="ttf-joypixels ttf-jetbrains-mono-nerd ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji ttf-fira-code ttf-dejavu ttf-liberation ttf-font-awesome ttf-indic-otf"
     ["Development"]="nodejs npm pnpm go lua python python-pip"
 )
 
