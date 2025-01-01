@@ -51,13 +51,15 @@ declare -A mandatory_package_groups=(
     ["Editors"]="vi vim neovim"
     ["Utils"]="htop wget curl openssh wireless_tools smartmontools wpa_supplicant iwd p7zip auto-cpufreq man man-db man-pages ripgrep flatpak linux-headers v4l2loopback-dkms xdg-desktop-portal-gtk ueberzug xdotool ncdu mpd mpv bluez bluez-libs bluez-utils xclip xcolor rsync git pulsemixer playerctl blueman maim unzip zip brightnessctl ntfs-3g udisks2 udiskie gvfs mlocate libnotify jq acpi sxiv pass feh fzf pipewire pipewire-pulse networkmanager neofetch picom xidlehook xorg-xsetroot lsof downgrade gptfdisk"
     ["Shell"]="dash zsh zsh-syntax-highlighting lxsession"
-    ["Apps"]="onlyoffice-bin yt-dlp silicon arandr dunst github-cli librewolf-bin chromium pcmanfm zathura zathura-pdf-mupdf ytfzf ani-cli gimp gimp-plugin-saveforweb"
+    ["Apps"]="silicon arandr dunst librewolf-bin chromium pcmanfm zathura zathura-pdf-mupdf"
 )
 
 declare -A optional_package_groups=(
     ["Appearance"]="gruvbox-dark-gtk gruvbox-dark-icons-gtk"
-    ["Fonts"]="ttf-joypixels ttf-jetbrains-mono-nerd ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji ttf-fira-code ttf-dejavu ttf-liberation ttf-font-awesome ttf-indic-otf"
+    ["Fonts"]="ttf-joypixels ttf-jetbrains-mono-nerd ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji ttf-fira-code ttf-dejavu ttf-liberation ttf-indic-otf"
     ["Development"]="nodejs npm pnpm go lua python python-pip"
+    ["Apps"]="onlyoffice-bin yt-dlp github-cli ytfzf ani-cli gimp gimp-plugin-saveforweb"
+    ["Misc"]="cpig-git"
 )
 
 # Install packages
