@@ -64,7 +64,7 @@ declare -A optional_package_groups=(
 
 # Install packages
 for group in "${!mandatory_package_groups[@]}"; do
-    for pkg in ${package_groups[$group]}; do
+    for pkg in ${mandatory_package_groups[$group]}; do
         if ! yay -Q "$pkg" &>/dev/null; then
             echo "Installing $pkg..."
             yay -S --noconfirm "$pkg"
