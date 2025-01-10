@@ -107,7 +107,7 @@ done
 # Nnisarg's nvim config
 if confirm "Do you want to install Nnisarg's nvim config?"; then
     rm -rf ~/.config/nvim
-    git clone --depth=1 "https://github.com/nnisarggada/nvim-config" ~/.config/nvim
+    git clone --depth=1 "https://github.com/nnisarggada/kickstart.nvim" ~/.config/nvim
 fi
 
 # System settings
