@@ -1,3 +1,61 @@
 #!/bin/bash
 
-ffmpeg -f x11grab -s "1920x1080" -r "30" -i :0.0 -f pulse -ac 2 -i default -vcodec libx264 -s "1920x1080" -acodec libmp3lame -ab 128k -ar 44100 -threads 0 -f mp4 $1
+# Define file paths for PIDs
+VID_PID_FILE="/tmp/rec_vid"
+AUDIO_PID_FILE="/tmp/rec_audio"
+OUTPUT_DIR=~/vids/
+
+# Ensure the output directory exists
+mkdir -p "$OUTPUT_DIR"
+
+# Function to start recording
+start_recording() {
+    TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
+    VIDEO_FILE="$OUTPUT_DIR/$TIMESTAMP.mp4"
+    AUDIO_FILE="$OUTPUT_DIR/${TIMESTAMP}_mic.mp4"
+
+    echo "Starting recording..."
+
+    # Record screen with desktop audio
+    ffmpeg -f x11grab -s "1920x1080" -r "30" -i :0.0 \
+        -f pulse -ac 2 -i "$(pactl get-default-sink).monitor" \
+        -vcodec libx264 -preset fast -crf 23 -s "1920x1080" \
+        -acodec aac -b:a 192k -ar 44100 \
+        -threads 0 -f mp4 "$VIDEO_FILE" &
+    VID_PID=$!
+    echo $VID_PID > "$VID_PID_FILE"
+
+    # Record default input audio (microphone)
+    ffmpeg -f pulse -ac 1 -i default \
+        -acodec aac -b:a 128k -ar 44100 \
+        -f mp4 "$AUDIO_FILE" &
+    AUDIO_PID=$!
+    echo $AUDIO_PID > "$AUDIO_PID_FILE"
+
+    echo "Recording started."
+    echo "Video file: $VIDEO_FILE"
+    echo "Microphone audio file: $AUDIO_FILE"
+    echo "Video PID: $VID_PID, Audio PID: $AUDIO_PID"
+}
+
+# Function to stop recording
+stop_recording() {
+    echo "Stopping recording..."
+    if [ -f "$VID_PID_FILE" ]; then
+        kill "$(cat "$VID_PID_FILE")" && rm -f "$VID_PID_FILE"
+        echo "Video recording stopped."
+    fi
+    if [ -f "$AUDIO_PID_FILE" ]; then
+        kill "$(cat "$AUDIO_PID_FILE")" && rm -f "$AUDIO_PID_FILE"
+        echo "Audio recording stopped."
+    fi
+}
+
+# Check if already recording
+if [ -f "$VID_PID_FILE" ] || [ -f "$AUDIO_PID_FILE" ]; then
+    stop_recording
+    notify-send "Recording stopped"
+else
+    notify-send "Recording started"
+    start_recording
+fi
