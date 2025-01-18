@@ -88,7 +88,8 @@ export TERMINAL=st
 export BROWSER=librewolf
 
 export ANDROID_HOME=~/Android/Sdk
-export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:/usr/lib/jvm/default/bin/:$PATH
+export JAVA_HOME=/usr/lib/jvm/default
+export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:/usr/lib/jvm/default/bin/:$JAVA_HOME/bin:$PATH
 
 exec ~/.local/bin/autostart &
 while type "dwm" > /dev/null ; do dwm && continue || break ; done
