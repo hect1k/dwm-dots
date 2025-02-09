@@ -64,17 +64,17 @@ case "$1" in
 	sink_notification
 	;;
 --sink_mute|-m)
-	kill -34 "$(cat ~/.cache/pidofbar)"
 	pactl set-sink-mute $sink_name true
+	kill -34 "$(cat ~/.cache/pidofbar)"
 	;;
 --source_toggle|-y)
-	kill -35 "$(cat ~/.cache/pidofbar)"
 	pactl set-source-mute $source_name toggle
+	kill -35 "$(cat ~/.cache/pidofbar)"
 	source_notification
 	;;
 --source_mute|-n)
-	kill -35 "$(cat ~/.cache/pidofbar)"
 	pactl set-source-mute $source_name true
+	kill -35 "$(cat ~/.cache/pidofbar)"
 	;;
 *)
 	echo "Usage: [SCRIPT] [COMMAND] [VALUE]"
