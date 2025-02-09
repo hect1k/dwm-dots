@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Check if two arguments are provided
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 <video.mp4> <audio.mp4>"
+    exit 1
+fi
+
+# Input files
+VIDEO="$1"
+AUDIO="$2"
+
+# Output file name
+OUTPUT="merged.mp4"
+
+# Run FFmpeg command with proper volume boosting
+ffmpeg -i "$VIDEO" -i "$AUDIO" -filter_complex "[1:a]volume=2.5[a1];[0:a][a1]amix=inputs=2:duration=longest:dropout_transition=3:normalize=0[aout]" -map 0:v -map "[aout]" -c:v copy -c:a aac -b:a 192k "$OUTPUT"
+
+# Notify completion
+echo "Merging complete! Output saved as $OUTPUT"
