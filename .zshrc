@@ -24,7 +24,12 @@ git_info() {
 
 # Bold Zsh Prompt
 setopt PROMPT_SUBST
-PS1="%B%{$fg_bold[red]%}[%{$fg_bold[yellow]%}%n%{$fg_bold[green]%}@%{$fg_bold[blue]%}%M %{$fg_bold[magenta]%}%~$(git_info)%{$fg_bold[red]%}]%{$reset_color%}$%b "
+update_prompt() {
+  PS1="%B%{$fg_bold[red]%}[%{$fg_bold[yellow]%}%n%{$fg_bold[green]%}@%{$fg_bold[blue]%}%M %{$fg_bold[magenta]%}%~$(git_info)%{$fg_bold[red]%}]%{$reset_color%}$%b "
+}
+update_prompt
+precmd() { update_prompt }   # Runs before displaying prompt
+preexec() { update_prompt }  # Runs before executing a command
 
 # History settings
 HISTSIZE=10000
