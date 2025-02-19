@@ -51,7 +51,7 @@ declare -A mandatory_package_groups=(
     ["Editors"]="vi vim neovim"
     ["Utils"]="htop wget curl openssh wireless_tools smartmontools wpa_supplicant iwd p7zip auto-cpufreq man man-db man-pages ripgrep flatpak linux-headers v4l2loopback-dkms xdg-desktop-portal-gtk ueberzug xdotool ncdu mpd mpv bluez bluez-libs bluez-utils xclip xcolor rsync git pulsemixer playerctl blueman maim unzip zip brightnessctl ntfs-3g udisks2 udiskie gvfs mlocate libnotify jq acpi sxiv pass feh fzf pipewire pipewire-pulse networkmanager neofetch picom xidlehook xorg-xsetroot lsof downgrade gptfdisk imagemagick unrar"
     ["Shell"]="dash zsh zsh-syntax-highlighting lxsession"
-    ["Apps"]="silicon arandr dunst librewolf-bin firefox chromium pcmanfm zathura zathura-pdf-mupdf"
+    ["Apps"]="silicon arandr dunst librewolf-bin chromium pcmanfm zathura zathura-pdf-mupdf"
 )
 
 declare -A optional_package_groups=(
