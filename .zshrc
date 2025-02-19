@@ -109,3 +109,10 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+# Initialize pyenv
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+# pyenv end
