@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ -z "$1" ]; then
-  echo "Usage: share <file> <link> <time>"
+  echo "Usage: share <file> <link> <time> <email>"
   exit 1
 fi
 
@@ -11,7 +11,7 @@ if [ -z "$3" ]; then
   time="$3"
 fi
 
-res=$(curl -F "file=@$1" -F "link=$2" -F "time=$time" https://share.nnisarg.in)
+res=$(curl -F "file=@$1" -F "link=$2" -F "time=$time" -F "email=$4" https://share.nnisarg.in)
 
 check=$(echo $res | grep "share.nnisarg.in")
 
