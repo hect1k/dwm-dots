@@ -2,12 +2,12 @@
 
 lxsession &
 bluetoothctl power off &
-picom &
-feh --bg-scale ~/pix/walls/forest.jpg &
 xidlehook --detect-sleep --not-when-fullscreen --not-when-audio --timer 120 'slock' 'xset dpms force on' &
-setxkbmap -option caps:escape
+setxkbmap -option caps:escape &
 xclip &
 udiskie &
+picom &
+feh --bg-scale ~/pix/walls/forest.jpg &
 ~/.local/bin/sbar &
 ~/.local/bin/drink-water &
 ~/.local/bin/batmon -n -L 20 -s ~/.local/share/sounds/notification.ogg -v 75 &
