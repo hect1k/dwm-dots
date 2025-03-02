@@ -87,7 +87,7 @@ alias grep='grep --color=auto'
 alias gc='git clone --depth=1'
 
 alias bc='better-commits'
-alias pn='pocketnaut'
+alias launchpad='npm create astro@latest --template nnisarggada/launchpad'
 
 alias v='nvim'
 alias vi='nvim'
