@@ -1,0 +1,8 @@
+{
+    "discordBranch": "stable",
+    "minimizeToTray": false,
+    "arRPC": true,
+    "splashColor": "rgb(221, 199, 161)",
+    "splashBackground": "rgb(40, 40, 40)",
+    "tray": true
+}
