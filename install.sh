@@ -57,7 +57,7 @@ declare -A mandatory_package_groups=(
 declare -A optional_package_groups=(
     ["Appearance"]="gruvbox-dark-gtk gruvbox-dark-icons-gtk"
     ["Fonts"]="ttf-joypixels ttf-jetbrains-mono-nerd ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji ttf-fira-code ttf-dejavu ttf-liberation ttf-indic-otf"
-    ["Development"]="nodejs npm pnpm go lua python python-pip pyenv pyenv-virtualenv maven jdk-openjdk"
+    ["Development"]="nodejs npm pnpm go lua python python-pip maven jdk-openjdk"
     ["Apps"]="onlyoffice-bin yt-dlp github-cli ytfzf ani-cli gimp gimp-plugin-saveforweb"
     ["Misc"]="cpig-git"
 )
@@ -89,6 +89,11 @@ for group in "${!optional_package_groups[@]}"; do
         fi
     done
 done
+
+# Install pyenv
+if confirm "Do you want to install pyenv?"; then
+    curl -fsSL https://pyenv.run | bash
+fi
 
 # Clone and install suckless software
 suckless_repos=("dwm" "dmenu" "st" "slock")

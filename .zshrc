@@ -116,5 +116,4 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 # Initialize pyenv
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 # pyenv end
