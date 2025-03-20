@@ -136,6 +136,7 @@ if confirm "Do you want to copy local configuration files?"; then
     sudo cp .zshrc ~/
     sudo cp .xinitrc ~/
     sudo cp .gtkrc-2.0 ~/
+    sudo cp -r .librewolf ~/
 fi
 
 # Install and configure auto-cpufreq
