@@ -100,7 +100,7 @@ suckless_repos=("dwm" "dmenu" "st" "slock")
 for repo in "${suckless_repos[@]}"; do
     if confirm "Do you want to install Nnisarg's $repo?"; then
         rm -rf ~/.config/$repo
-        git clone --depth=1 "https://github.com/nnisarggada/$repo" ~/.config/$repo
+        git clone --depth=1 "https://github.com/hect1k/$repo" ~/.config/$repo
         cd ~/.config/$repo || exit
         sudo make clean install
         cd -
@@ -112,7 +112,7 @@ done
 # Nnisarg's nvim config
 if confirm "Do you want to install Nnisarg's nvim config?"; then
     rm -rf ~/.config/nvim
-    git clone --depth=1 "https://github.com/nnisarggada/kickstart.nvim" ~/.config/nvim
+    git clone --depth=1 "https://github.com/hect1k/kickstart.nvim" ~/.config/nvim
 fi
 
 # System settings
