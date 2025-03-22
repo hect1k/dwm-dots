@@ -93,6 +93,7 @@ done
 # Install pyenv
 if confirm "Do you want to install pyenv?"; then
     curl -fsSL https://pyenv.run | bash
+    git clone https://github.com/alefpereira/pyenv-pyright.git --depth=1 $(pyenv root)/plugins/pyenv-pyright
 fi
 
 # Clone and install suckless software
