@@ -2,7 +2,7 @@
 
 lxsession &
 bluetoothctl power off &
-xidlehook --detect-sleep --not-when-fullscreen --not-when-audio --timer 120 'slock' 'xset dpms force on' &
+xidlehook --detect-sleep --not-when-fullscreen --not-when-audio --timer 300 'slock' 'xset dpms force on' &
 setxkbmap -option caps:escape &
 xclip &
 udiskie &
