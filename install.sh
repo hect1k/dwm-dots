@@ -106,6 +106,7 @@ done
 
 # Nnisarg's nvim config
 if confirm "Do you want to install Nnisarg's nvim config?"; then
+    yay -S --noconfirm markdownlint-cli
     rm -rf ~/.config/nvim
     git clone --depth=1 "https://github.com/hect1k/kickstart.nvim" ~/.config/nvim
 fi
