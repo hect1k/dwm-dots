@@ -1,9 +1,9 @@
 #!/bin/sh
 
 if [ $# -eq 0 ]; then
-  $BROWSER --new-window "https://www.youtube.com"
+  $BROWSER --target window "https://www.youtube.com"
 else
   search_query="$*"
   encoded_query=$(echo "$search_query" | sed 's/ /+/g')
-  $BROWSER --new-window "https://www.youtube.com/results?search_query=$encoded_query"
+  $BROWSER --target window "https://www.youtube.com/results?search_query=$encoded_query"
 fi

@@ -1,3 +1,3 @@
 #!/bin/sh
 
-$BROWSER --new-window "https://discord.com/channels/@me"
+$BROWSER --target window "https://discord.com/channels/@me"
