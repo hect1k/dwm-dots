@@ -395,12 +395,12 @@ c.tabs.width = "7%"
 # privacy - adjust these settings based on your preference
 # config.set("completion.cmd_history_max_items", 0)
 # config.set("content.private_browsing", True)
-config.set("content.webgl", False, "*")
-config.set("content.canvas_reading", False)
-config.set("content.geolocation", False)
-config.set("content.webrtc_ip_handling_policy", "default-public-interface-only")
-config.set("content.cookies.accept", "no-3rdparty")  # blocks 3rd-party tracking cookies
-config.set("content.cookies.store", True)
+c.content.webgl = False
+c.content.canvas_reading = False
+c.content.geolocation = False
+c.content.webrtc_ip_handling_policy = "default-public-interface-only"
+c.content.cookies.accept = "no-3rdparty"
+c.content.cookies.store = True
 # config.set("content.javascript.enabled", False) # tsh keybind to toggle
 
 c.content.pdfjs = True

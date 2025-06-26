@@ -49,7 +49,7 @@ declare -A mandatory_package_groups=(
     ["Graphics"]="intel-media-driver mesa xf86-video-amdgpu xf86-video-vmware xf86-video-ati xf86-video-nouveau libva-intel-driver vulkan-intel libva-mesa-driver vulkan-radeon nvidia nvidia-utils lib32-nvidia-utils"
     ["Xorg"]="xorg-server xorg-xinit xdg-utils xorg-xinput xorg-xrandr"
     ["Editors"]="vi vim neovim"
-    ["Utils"]="btrfs-progs htop wget curl openssh wireless_tools smartmontools wpa_supplicant iwd p7zip auto-cpufreq man man-db man-pages ripgrep flatpak linux-headers v4l2loopback-dkms xdg-desktop-portal-gtk ueberzug xdotool ncdu mpd mpv bluez bluez-libs bluez-utils xclip xcolor rsync git pulsemixer playerctl blueman maim unzip zip brightnessctl ntfs-3g udisks2 udiskie gvfs mlocate libnotify jq acpi sxiv pass feh fzf pipewire pipewire-pulse networkmanager neofetch picom xidlehook xorg-xsetroot lsof downgrade gptfdisk imagemagick unrar"
+    ["Utils"]="btrfs-progs htop wget curl openssh wireless_tools smartmontools wpa_supplicant iwd p7zip auto-cpufreq man man-db man-pages ripgrep flatpak linux-headers v4l2loopback-dkms xdg-desktop-portal-gtk ueberzug xdotool ncdu mpd mpv bluez bluez-libs bluez-utils xclip xcolor rsync git pulsemixer playerctl blueman maim unzip zip brightnessctl ntfs-3g udisks2 udiskie gvfs mlocate libnotify jq acpi sxiv pass feh fzf pipewire pipewire-pulse networkmanager fastfetch picom xidlehook xorg-xsetroot lsof downgrade gptfdisk imagemagick unrar"
     ["Shell"]="dash zsh zsh-syntax-highlighting lxsession"
     ["Apps"]="silicon arandr dunst qutebrowser pdfjs chromium pcmanfm zathura zathura-pdf-mupdf"
 )
@@ -58,8 +58,8 @@ declare -A optional_package_groups=(
     ["Appearance"]="gruvbox-dark-gtk gruvbox-dark-icons-gtk"
     ["Fonts"]="cantarell-fonts ttf-joypixels ttf-jetbrains-mono-nerd ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji ttf-fira-code ttf-dejavu ttf-liberation ttf-indic-otf"
     ["Development"]="nodejs npm pnpm go lua python python-pip uv maven jdk-openjdk"
-    ["Apps"]="onlyoffice-bin yt-dlp github-cli ytfzf ani-cli gimp"
-    ["Misc"]="cpig-git"
+    ["Apps"]="onlyoffice-bin yt-dlp github-cli ytfzf ani-cli gimp vesktop-bin"
+    ["Misc"]="cpig-git btop"
 )
 
 # Install packages
