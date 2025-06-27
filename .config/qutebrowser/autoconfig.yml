@@ -7,8 +7,11 @@
 config_version: 2
 settings:
   content.notifications.enabled:
+    https://app.tuta.com: true
     https://freshrss.nnisarg.in: true
     https://mail.nnisarg.in: true
     https://www.youtube.com: false
+  content.register_protocol_handler:
+    https://app.tuta.com#url=%25s: true
   statusbar.show:
     global: always
