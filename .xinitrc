@@ -85,7 +85,7 @@ fi
 # Env vars
 export PATH=$HOME/.local/bin:$PATH
 export TERMINAL=st
-export BROWSER=qutebrowser
+export BROWSER=librewolf
 
 export ANDROID_HOME=~/Android/Sdk
 export JAVA_HOME=/usr/lib/jvm/default
