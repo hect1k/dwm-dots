@@ -33,7 +33,7 @@
     frame_width = 1
 
     frame_color = "#ebdbb2"
-    background_color = "#1d2021"
+    background_color = "#00000080"
     foreground_color = "#ebdbb2"
 
     gap_size = 10
@@ -90,7 +90,7 @@
    per_monitor_dpi = false
 
 [urgency_low]
-    background = "#1d2021"
+    background = "#00000080"
     foreground = "#ebdbb2"
     timeout = 10
 
