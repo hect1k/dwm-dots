@@ -7,7 +7,7 @@ setxkbmap -option caps:escape &
 xclip &
 udiskie &
 picom &
-feh --bg-scale ~/pix/walls/forest.jpg &
+feh --bg-scale ~/pix/walls/flower.jpg &
 ~/.local/bin/sbar &
 ~/.local/bin/drink-water &
 ~/.local/bin/batmon -n -L 20 -s ~/.local/share/sounds/notification.ogg -v 75 &
